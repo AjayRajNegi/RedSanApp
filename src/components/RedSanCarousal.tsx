@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FlatList,
   Text,
@@ -6,39 +5,47 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Pressable,
 } from 'react-native';
-import {colors, shadow, sizes, spacing} from '../constants/theme';
+import React from 'react';
+import {CarousalItem} from '../data/Index';
+import {colors, fontSize, sizes, spacing} from '../constants/theme';
 
-const CARD_HEIGHT = 200;
-console.log(sizes.width);
+interface CarousalProps {
+  list: CarousalItem[];
+}
 
-const RedSanCarousal = ({list}) => {
+const RedSanCarousal: React.FC<CarousalProps> = ({list}) => {
   return (
     <FlatList
       data={list}
       horizontal
       decelerationRate="fast"
       showsHorizontalScrollIndicator={false}
-      keyExtractor={i => i.id}
+      keyExtractor={i => i.id.toString()}
       renderItem={({item, index}) => {
         return (
           <TouchableOpacity
             style={{
               marginLeft: 0,
               marginRight: 0,
-              marginBottom: spacing.l,
-              backgroundColor: 'red',
+              marginBottom: spacing.md,
             }}>
-            <View style={[styles.card, shadow.dark]}>
+            <View style={styles.card}>
               <Image source={item.image} style={styles.image} />
-
-              {/* <View style={styles.imageBox}>
-                <Image source={item.image} style={styles.image} />
+              <View style={styles.carousal}>
+                <Text style={styles.heading}>{item.title}</Text>
+                <Text style={styles.subHeading}>{item.subTitle}</Text>
+                <Pressable
+                  style={styles.carousalButton}
+                  onPress={() => {
+                    console.log('Press');
+                  }}>
+                  <Text style={styles.pressText}>Shop Now</Text>
+                </Pressable>
+                <Text style={styles.offer}>Get Offers Upto</Text>
+                <Text style={styles.offerAmount}>Rs-/499</Text>
               </View>
-              <View style={styles.titleBox}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.location}>{item.location}</Text>
-              </View> */}
             </View>
           </TouchableOpacity>
         );
@@ -49,13 +56,36 @@ const RedSanCarousal = ({list}) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: sizes.width,
-    height: 253,
+    minWidth: sizes.width,
     overflow: 'hidden',
+    display: 'flex',
   },
   image: {
-    resizeMode: 'contain',
+    resizeMode: 'cover',
   },
+  carousal: {
+    display: 'flex',
+    position: 'absolute',
+    maxWidth: sizes.width / 1.9,
+    top: spacing.xxl,
+    left: spacing.md,
+  },
+  heading: {color: colors.black, fontSize: fontSize.xl, fontWeight: 'bold'},
+  subHeading: {color: colors.black, fontSize: fontSize.lg, fontWeight: '400'},
+  carousalButton: {
+    color: colors.black,
+    padding: 1,
+    marginTop: spacing.sm,
+    marginBottom: spacing.sm,
+    borderWidth: 2,
+    borderRadius: sizes.radius,
+    alignItems: 'center',
+    width: sizes.width / 4,
+    backgroundColor: colors.black,
+  },
+  pressText: {fontSize: fontSize.md},
+  offer: {color: colors.black, fontSize: fontSize.md},
+  offerAmount: {color: colors.black},
 });
 
 export default RedSanCarousal;

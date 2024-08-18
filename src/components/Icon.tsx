@@ -1,9 +1,16 @@
 import React from 'react';
-import {Image} from 'react-native';
-import {TouchableOpacity} from 'react-native';
 import Icons from '../constants/Icons';
+import {TouchableOpacity} from 'react-native';
+import {Image, ImageStyle, StyleProp} from 'react-native';
 
-const Icon = ({onPress, icon, style, size = 32}) => {
+type IconProps = {
+  icon: keyof typeof Icons;
+  size: number;
+  style?: StyleProp<ImageStyle>;
+  onPress: () => void;
+};
+
+const Icon: React.FC<IconProps> = ({icon, size, style, onPress}) => {
   const image = (
     <Image
       source={Icons[icon]}

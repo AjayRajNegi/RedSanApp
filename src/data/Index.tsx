@@ -2,39 +2,50 @@ export const RedSanImages = {
   id: 1,
   image: require('../../assets/Images/RedSan.png'),
 };
-export const RedSanCarousalData = [
-  {id: 1, image: require('../../assets/Images/Gym.png')},
-  {id: 2, image: require('../../assets/Images/Donut.png')},
-  {id: 3, image: require('../../assets/Images/Burger.png')},
-];
-export const TOP_PLACES = [
+// Carousal Data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+export interface CarousalItem {
+  id: number;
+  image: any;
+  title: string;
+  subTitle: string;
+  location: string;
+}
+export const RedSanCarousalData: CarousalItem[] = [
   {
     id: 1,
-    image: require('../../assets/Images/2082f59465c39094ce90bebd0fcf8fa7.jpeg'),
-    title: 'Amalfi',
-    location: 'Italy',
-    description:
-      'The ultimate Amalfi Coast travel guide, where to stay, where to eat, and what areas to visit in the Amalfi Coast of Italy. Positano, Ravello, Amalfi and more',
+    image: require('../../assets/Images/Gym.png'),
+    title: 'GYM FREAKS',
+    subTitle: 'Get a Gym Membership Now.',
+    location: 'Balawala',
   },
   {
     id: 2,
-    image: require('../../assets/Images/922a0cb274208ccd234f6c14f2174b8b.jpeg'),
-    title: 'Granada',
-    location: 'Spain',
-    description:
-      'Granada is the capital city of the province of Granada, in the autonomous community of Andalusia, Spain',
+    image: require('../../assets/Images/Donut.png'),
+    title: 'TASTEBUDS TREAT',
+    subTitle: 'Get Cakes. Donuts and more!',
+    location: 'Bhaniyawala',
   },
   {
     id: 3,
-    image: require('../../assets/Images/e57a2a310330ee1d8928eb75d416a53d.jpeg'),
-    title: 'Cherry blossoms',
-    location: 'Japan',
-    description:
-      "Cherry blossoms usually bloom between mid-March and early May. In 2022, Tokyo's cherry blossom season officially began on March 20",
+    image: require('../../assets/Images/Burger.png'),
+    title: 'BUNS AND BITES',
+    subTitle: 'Get a Frosty Juicy Burger.',
+    location: 'Jogiwala',
   },
 ];
+// Places Data >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface PlacesData {
+  id: number;
+  image: any;
+  title: string;
+  location: string;
+  description: string;
+  streakNumber: number;
+  streakColor: string;
+}
 
-export const PLACES = [
+export const PLACES: PlacesData[] = [
   {
     id: 4,
     image: require('../../assets/Images/645d5f28e26c7de2a280f71db15c2141.jpeg'),
@@ -74,5 +85,31 @@ export const PLACES = [
       'Phuket is the largest island in Thailand. It is located in the Andaman Sea in southern Thailand',
     streakNumber: 1,
     streakColor: 'yellow',
+  },
+];
+export const TOP_PLACES = [
+  {
+    id: 1,
+    image: require('../../assets/Images/2082f59465c39094ce90bebd0fcf8fa7.jpeg'),
+    title: 'Amalfi',
+    location: 'Italy',
+    description:
+      'The ultimate Amalfi Coast travel guide, where to stay, where to eat, and what areas to visit in the Amalfi Coast of Italy. Positano, Ravello, Amalfi and more',
+  },
+  {
+    id: 2,
+    image: require('../../assets/Images/922a0cb274208ccd234f6c14f2174b8b.jpeg'),
+    title: 'Granada',
+    location: 'Spain',
+    description:
+      'Granada is the capital city of the province of Granada, in the autonomous community of Andalusia, Spain',
+  },
+  {
+    id: 3,
+    image: require('../../assets/Images/e57a2a310330ee1d8928eb75d416a53d.jpeg'),
+    title: 'Cherry blossoms',
+    location: 'Japan',
+    description:
+      "Cherry blossoms usually bloom between mid-March and early May. In 2022, Tokyo's cherry blossom season officially began on March 20",
   },
 ];

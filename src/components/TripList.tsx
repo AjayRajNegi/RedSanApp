@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FlatList,
   Image,
@@ -7,13 +6,19 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import {colors, shadow, sizes, spacing} from '../constants/theme';
+import React from 'react';
+import {PlacesData} from '../data/Index';
+import {colors, fontSize, shadow, sizes, spacing} from '../constants/theme';
 
-const CARD_WIDTH = sizes.width / 2.8 - (spacing.l + spacing.l / 2);
+const CARD_WIDTH = sizes.width / 2.8 - (spacing.lg + spacing.lg / 2);
+const CARD_WIDTH_SPACING = CARD_WIDTH / 2 + spacing.sm;
 const CARD_HEIGHT = 220;
-const CARD_WIDTH_SPACING = CARD_WIDTH / 2 + spacing.s;
 
-const TripsList = ({list}) => {
+interface TripProps {
+  list: PlacesData[];
+}
+
+const TripsList: React.FC<TripProps> = ({list}) => {
   return (
     <>
       <FlatList
@@ -22,14 +27,14 @@ const TripsList = ({list}) => {
         snapToInterval={CARD_WIDTH_SPACING}
         decelerationRate="fast"
         showsHorizontalScrollIndicator={false}
-        keyExtractor={i => i.id}
+        keyExtractor={i => i.id.toString()}
         renderItem={({item, index}) => {
           return (
             <TouchableOpacity
               style={{
-                marginLeft: spacing.m,
-                marginRight: index === list.length - 1 ? spacing.s : 0,
-                marginTop: spacing.m,
+                marginLeft: spacing.md,
+                marginRight: index === list.length - 1 ? spacing.sm : 0,
+                marginTop: spacing.md,
               }}>
               <View style={[styles.card, shadow.dark]}>
                 <View style={styles.streak}>
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -20,
   },
-  streakText: {color: 'black', fontSize: 18, fontWeight: 'bold'},
+  streakText: {color: 'black', fontSize: fontSize.md, fontWeight: 'bold'},
   imageBox: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT - 60,
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    marginVertical: 4,
+    marginVertical: spacing.xs,
     fontSize: sizes.body,
     fontWeight: 'bold',
     color: colors.primary,

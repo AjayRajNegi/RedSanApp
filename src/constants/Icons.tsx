@@ -1,17 +1,12 @@
-const Home = require('../../assets/icons/Home.png');
-const Search = require('../../assets/icons/Search.png');
-const Favorite = require('../../assets/icons/Favorite.png');
-const FavoriteFilled = require('../../assets/icons/Favorite_filled.png');
-const Hamburger = require('../../assets/icons/Hamburger.png');
-const Notification = require('../../assets/icons/Notification.png');
-const User = require('../../assets/icons/User.png');
-
-export default {
-  Home,
-  FavoriteFilled,
-  Favorite,
-  Hamburger,
-  Search,
-  Notification,
-  User,
+import {ImageSourcePropType} from 'react-native';
+const Icons: Record<string, ImageSourcePropType> = {
+  Home: require('../../assets/icons/Home.png'),
+  Search: require('../../assets/icons/Search.png'),
+  Favorite: require('../../assets/icons/Favorite.png'),
+  FavoriteFilled: require('../../assets/icons/Favorite_filled.png'),
+  Hamburger: require('../../assets/icons/Hamburger.png'),
+  Notification: require('../../assets/icons/Notification.png'),
+  User: require('../../assets/icons/User.png'),
 };
+
+export default Icons;

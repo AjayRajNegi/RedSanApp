@@ -1,8 +1,12 @@
 import React from 'react';
-import {Button, Text, View, StyleSheet} from 'react-native';
-import {sizes, spacing} from '../constants/theme';
+import {Text, View, StyleSheet} from 'react-native';
+import {colors, sizes, spacing} from '../constants/theme';
 
-const SectionHeader = ({title}) => {
+interface Title {
+  title: string;
+}
+
+const SectionHeader: React.FC<Title> = ({title}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -15,15 +19,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginLeft: spacing.m,
-    marginRight: spacing.m,
-    marginTop: 0,
-    marginBottom: 10,
+    marginLeft: spacing.md,
+    marginRight: spacing.md,
+    marginBottom: spacing.sm,
   },
   title: {
     fontSize: sizes.h3,
     fontWeight: 'bold',
-    color: 'black',
+    color: colors.black,
   },
 });
 

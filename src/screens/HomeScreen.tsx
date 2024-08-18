@@ -1,29 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import TopPlacesCarousel from '../components/TopPlacesCarousel';
-import {PLACES, TOP_PLACES, RedSanCarousalData} from '../data/Index';
-import SectionHeader from '../components/SectionHeader';
-import {colors} from '../constants/theme';
 import TripList from '../components/TripList';
+import {colors, sizes} from '../constants/theme';
 import RedSanHeader from '../components/RedSanHeader';
+import SectionHeader from '../components/SectionHeader';
 import RedSanCarousal from '../components/RedSanCarousal';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import {PLACES, TOP_PLACES, RedSanCarousalData} from '../data/Index';
 
 const HomeScreen = () => {
-  {
-    console.log('Hello');
-  }
   return (
     <View style={styles.container}>
       <RedSanHeader />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <TopPlacesCarousel list={RedSanCarousalData} />
-        {/* <RedSanCarousal list={RedSanCarousalData} /> */}
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{minWidth: sizes.width}}>
+        <RedSanCarousal list={RedSanCarousalData} />
         <SectionHeader title="You Pinned📌" />
         <TripList list={PLACES} />
         <SectionHeader title="Your Streaks✨" />
         <TripList list={PLACES} />
-        <TopPlacesCarousel list={TOP_PLACES} />
-        <TopPlacesCarousel list={TOP_PLACES} />
       </ScrollView>
     </View>
   );
@@ -35,5 +30,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.light,
+    minWidth: sizes.width,
   },
 });
