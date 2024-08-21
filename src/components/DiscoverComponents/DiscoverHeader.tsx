@@ -3,8 +3,14 @@ import React from 'react';
 import {TextInput} from 'react-native-gesture-handler';
 import {colors, fontSize, sizes, spacing} from '../../constants/theme';
 import Icons from '../../constants/Icons';
+import DiscoverCategory from './DiscoverCategory';
+import {DiscoverCategoryProps} from '../../data/Index';
 
-const DiscoverHeader = () => {
+interface DiscoverHeaderProps {
+  list: DiscoverCategoryProps[];
+}
+
+const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({list}) => {
   return (
     <View style={styles.header}>
       <View style={styles.topHeader}>
@@ -25,7 +31,7 @@ const DiscoverHeader = () => {
         </View>
         <Image source={Icons.Filter} />
       </View>
-      <View></View>
+      <DiscoverCategory list={list} />
     </View>
   );
 };

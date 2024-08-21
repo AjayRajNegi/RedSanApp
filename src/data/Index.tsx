@@ -2,6 +2,20 @@ export const RedSanImages = {
   id: 1,
   image: require('../../assets/Images/RedSan.png'),
 };
+//Discovver Category Items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface DiscoverCategoryProps {
+  id: number;
+  name: string;
+}
+
+export const DiscoverCategory: DiscoverCategoryProps[] = [
+  {id: 1, name: 'Trending'},
+  {id: 2, name: 'Cafe'},
+  {id: 3, name: 'Tourism'},
+  {id: 4, name: 'Gym'},
+  {id: 5, name: 'Hotels'},
+  {id: 6, name: 'Movies'},
+];
 // Carousal Data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export interface CarousalItem {
@@ -129,19 +143,4 @@ export const TOP_PLACES: TopPlacesData[] = [
     streakNumber: 2,
     streakColor: 'skyblue',
   },
-];
-
-//Discovver Category Items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-interface DiscoverCategoryProps {
-  id: number;
-  name: string;
-}
-
-export const DiscoverCategory: DiscoverCategoryProps[] = [
-  {id: 1, name: 'Trending'},
-  {id: 2, name: 'Cafe'},
-  {id: 3, name: 'Tourism'},
-  {id: 4, name: 'Gym'},
-  {id: 5, name: 'Hotels'},
-  {id: 6, name: 'Movies'},
 ];

@@ -2,6 +2,7 @@ import {View, Text, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 import React from 'react';
 import {sizes} from '../constants/theme';
 import DiscoverHeader from '../components/DiscoverComponents/DiscoverHeader';
+import {DiscoverCategory} from '../data/Index';
 
 const DiscoverScreen = () => {
   return (
@@ -10,7 +11,7 @@ const DiscoverScreen = () => {
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={styles.scrollContainer}>
-          <DiscoverHeader />
+          <DiscoverHeader list={DiscoverCategory} />
         </ScrollView>
       </View>
     </SafeAreaView>
