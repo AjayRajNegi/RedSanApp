@@ -87,7 +87,18 @@ export const PLACES: PlacesData[] = [
     streakColor: 'yellow',
   },
 ];
-export const TOP_PLACES = [
+
+// TOP Places >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+interface TopPlacesData {
+  id: number;
+  image: any;
+  title: string;
+  location: string;
+  description: string;
+  streakNumber: number;
+  streakColor: string;
+}
+export const TOP_PLACES: TopPlacesData[] = [
   {
     id: 1,
     image: require('../../assets/Images/2082f59465c39094ce90bebd0fcf8fa7.jpeg'),
@@ -95,6 +106,8 @@ export const TOP_PLACES = [
     location: 'Italy',
     description:
       'The ultimate Amalfi Coast travel guide, where to stay, where to eat, and what areas to visit in the Amalfi Coast of Italy. Positano, Ravello, Amalfi and more',
+    streakNumber: 1,
+    streakColor: 'yellow',
   },
   {
     id: 2,
@@ -103,6 +116,8 @@ export const TOP_PLACES = [
     location: 'Spain',
     description:
       'Granada is the capital city of the province of Granada, in the autonomous community of Andalusia, Spain',
+    streakNumber: 7,
+    streakColor: 'blue',
   },
   {
     id: 3,
@@ -111,5 +126,22 @@ export const TOP_PLACES = [
     location: 'Japan',
     description:
       "Cherry blossoms usually bloom between mid-March and early May. In 2022, Tokyo's cherry blossom season officially began on March 20",
+    streakNumber: 2,
+    streakColor: 'skyblue',
   },
+];
+
+//Discovver Category Items >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+interface DiscoverCategoryProps {
+  id: number;
+  name: string;
+}
+
+export const DiscoverCategory: DiscoverCategoryProps[] = [
+  {id: 1, name: 'Trending'},
+  {id: 2, name: 'Cafe'},
+  {id: 3, name: 'Tourism'},
+  {id: 4, name: 'Gym'},
+  {id: 5, name: 'Hotels'},
+  {id: 6, name: 'Movies'},
 ];

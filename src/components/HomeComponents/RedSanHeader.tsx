@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Image} from 'react-native';
-import {RedSanImages} from '../data/Index';
+import {RedSanImages} from '../../data/Index';
 
 const RedSanHeader = () => {
   return (

@@ -7,6 +7,10 @@ const Icons: Record<string, ImageSourcePropType> = {
   Hamburger: require('../../assets/icons/Hamburger.png'),
   Notification: require('../../assets/icons/Notification.png'),
   User: require('../../assets/icons/User.png'),
+  Location: require('../../assets/icons/Location.png'),
+  LocationDownArrow: require('../../assets/icons/LocationDownArrow.png'),
+  SearchInput: require('../../assets/icons/SearchInput.png'),
+  Filter: require('../../assets/icons/Filter.png'),
 };
 
 export default Icons;

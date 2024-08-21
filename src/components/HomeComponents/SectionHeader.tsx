@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {colors, sizes, spacing} from '../constants/theme';
+import {colors, sizes, spacing} from '../../constants/theme';
 
 interface Title {
   title: string;

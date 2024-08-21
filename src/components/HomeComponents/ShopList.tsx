@@ -7,8 +7,8 @@ import {
   Text,
 } from 'react-native';
 import React from 'react';
-import {PlacesData} from '../data/Index';
-import {colors, fontSize, shadow, sizes, spacing} from '../constants/theme';
+import {PlacesData} from '../../data/Index';
+import {colors, fontSize, shadow, sizes, spacing} from '../../constants/theme';
 
 const CARD_WIDTH = sizes.width / 2.8 - (spacing.lg + spacing.lg / 2);
 const CARD_WIDTH_SPACING = CARD_WIDTH / 2 + spacing.sm;
@@ -18,25 +18,21 @@ interface TripProps {
   list: PlacesData[];
 }
 
-const TripsList: React.FC<TripProps> = ({list}) => {
+const ShopList: React.FC<TripProps> = ({list}) => {
   return (
     <>
       <FlatList
         data={list}
         horizontal
-        snapToInterval={CARD_WIDTH_SPACING}
         decelerationRate="fast"
-        showsHorizontalScrollIndicator={false}
+        style={styles.flatContainer}
         keyExtractor={i => i.id.toString()}
-        renderItem={({item, index}) => {
+        snapToInterval={CARD_WIDTH_SPACING}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({item}) => {
           return (
-            <TouchableOpacity
-              style={{
-                marginLeft: spacing.md,
-                marginRight: index === list.length - 1 ? spacing.sm : 0,
-                marginTop: spacing.md,
-              }}>
-              <View style={[styles.card, shadow.dark]}>
+            <TouchableOpacity style={styles.touchContainer}>
+              <View style={[styles.card]}>
                 <View style={styles.streak}>
                   <View
                     style={[
@@ -63,6 +59,13 @@ const TripsList: React.FC<TripProps> = ({list}) => {
 };
 
 const styles = StyleSheet.create({
+  flatContainer: {
+    marginLeft: spacing.md,
+  },
+  touchContainer: {
+    paddingTop: spacing.md,
+    marginRight: spacing.md,
+  },
   card: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT,
@@ -86,7 +89,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -20,
   },
-  streakText: {color: 'black', fontSize: fontSize.md, fontWeight: 'bold'},
+  streakText: {
+    color: colors.black,
+    fontSize: fontSize.md,
+    fontWeight: 'bold',
+  },
   imageBox: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT - 60,
@@ -111,4 +118,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TripsList;
+export default ShopList;

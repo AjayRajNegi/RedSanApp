@@ -8,8 +8,8 @@ import {
   Pressable,
 } from 'react-native';
 import React from 'react';
-import {CarousalItem} from '../data/Index';
-import {colors, fontSize, sizes, spacing} from '../constants/theme';
+import {CarousalItem} from '../../data/Index';
+import {colors, fontSize, sizes, spacing} from '../../constants/theme';
 
 interface CarousalProps {
   list: CarousalItem[];
@@ -18,8 +18,8 @@ interface CarousalProps {
 const RedSanCarousal: React.FC<CarousalProps> = ({list}) => {
   return (
     <FlatList
-      data={list}
       horizontal
+      data={list}
       decelerationRate="fast"
       showsHorizontalScrollIndicator={false}
       keyExtractor={i => i.id.toString()}
@@ -70,8 +70,16 @@ const styles = StyleSheet.create({
     top: spacing.xxl,
     left: spacing.md,
   },
-  heading: {color: colors.black, fontSize: fontSize.xl, fontWeight: 'bold'},
-  subHeading: {color: colors.black, fontSize: fontSize.lg, fontWeight: '400'},
+  heading: {
+    color: colors.black,
+    fontSize: fontSize.xl,
+    fontWeight: 'bold',
+  },
+  subHeading: {
+    color: colors.black,
+    fontSize: fontSize.lg,
+    fontWeight: '400',
+  },
   carousalButton: {
     color: colors.black,
     padding: 1,
@@ -83,9 +91,17 @@ const styles = StyleSheet.create({
     width: sizes.width / 4,
     backgroundColor: colors.black,
   },
-  pressText: {fontSize: fontSize.md},
-  offer: {color: colors.black, fontSize: fontSize.md},
-  offerAmount: {color: colors.black},
+  pressText: {
+    fontSize: fontSize.md,
+    color: colors.white,
+  },
+  offer: {
+    color: colors.black,
+    fontSize: fontSize.md,
+  },
+  offerAmount: {
+    color: colors.black,
+  },
 });
 
 export default RedSanCarousal;

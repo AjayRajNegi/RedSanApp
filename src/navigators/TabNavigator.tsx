@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../components/Icon';
+import Icon from '../components/HomeComponents/Icon';
 import {iconSize} from '../constants/theme';
 import GameScreen from '../screens/GameScreen';
 import HomeScreen from '../screens/HomeScreen';
