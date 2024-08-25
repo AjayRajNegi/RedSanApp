@@ -14,8 +14,9 @@ const DiscoverScreen = () => {
           showsVerticalScrollIndicator={false}
           style={styles.scrollContainer}>
           <DiscoverHeader list={DiscoverCategory} />
-          <SectionHeader title="Popular" list={2} />
+          <SectionHeader title="Popular" list={1} />
           <PopularSection list={TOP_PLACES} />
+          <SectionHeader title="Recommended" list={2} />
         </ScrollView>
       </View>
     </SafeAreaView>

@@ -4,9 +4,9 @@ import {
   Image,
   FlatList,
   StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
   ListRenderItem,
+  ImageBackground,
+  TouchableHighlight,
 } from 'react-native';
 import React from 'react';
 import {colors, fontSize, sizes, spacing} from '../../constants/theme';
@@ -45,15 +45,17 @@ const PopularSection: React.FC<PopularSectionProps> = ({list}) => {
     );
   };
   return (
-    <TouchableOpacity style={styles.touchableContainer}>
+    <TouchableHighlight style={styles.touchableContainer} onPress={() => {}}>
       <FlatList
         horizontal
         data={list}
         renderItem={renderItem}
-        keyExtractor={item => item.id.toString()}
+        decelerationRate="fast"
+        snapToAlignment="center"
         showsHorizontalScrollIndicator={false}
+        keyExtractor={item => item.id.toString()}
       />
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 };
 
@@ -62,7 +64,7 @@ export default PopularSection;
 const styles = StyleSheet.create({
   touchableContainer: {
     marginLeft: spacing.md,
-    marginTop: spacing.md,
+    marginVertical: spacing.md,
   },
   cardContainer: {
     height: sizes.width / 1.6,
