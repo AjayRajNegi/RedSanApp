@@ -29,7 +29,7 @@ const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({list}) => {
           <Image source={Icons.SearchInput} />
           <TextInput placeholder="Search" />
         </View>
-        <Image source={Icons.Filter} />
+        <Image source={Icons.Filter} style={styles.filterIcon} />
       </View>
       <DiscoverCategory list={list} />
     </View>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   header: {
     marginTop: 50,
     marginLeft: spacing.md,
-    marginRight: spacing.md,
+    marginRight: 0,
   },
   topHeader: {
     flexDirection: 'row',
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.xs,
+    marginRight: spacing.md,
   },
   topHeaderLocationText: {
     color: colors.black,
@@ -86,4 +87,5 @@ const styles = StyleSheet.create({
     minWidth: sizes.width * 0.73,
     height: 40,
   },
+  filterIcon: {marginRight: spacing.md},
 });

@@ -2,7 +2,9 @@ import {View, Text, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 import React from 'react';
 import {sizes} from '../constants/theme';
 import DiscoverHeader from '../components/DiscoverComponents/DiscoverHeader';
-import {DiscoverCategory} from '../data/Index';
+import {DiscoverCategory, TOP_PLACES} from '../data/Index';
+import SectionHeader from '../components/DiscoverComponents/SectionHeader';
+import PopularSection from '../components/DiscoverComponents/PopularSection';
 
 const DiscoverScreen = () => {
   return (
@@ -12,6 +14,8 @@ const DiscoverScreen = () => {
           showsVerticalScrollIndicator={false}
           style={styles.scrollContainer}>
           <DiscoverHeader list={DiscoverCategory} />
+          <SectionHeader title="Popular" list={2} />
+          <PopularSection list={TOP_PLACES} />
         </ScrollView>
       </View>
     </SafeAreaView>

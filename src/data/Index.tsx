@@ -103,7 +103,7 @@ export const PLACES: PlacesData[] = [
 ];
 
 // TOP Places >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-interface TopPlacesData {
+export interface TopPlacesData {
   id: number;
   image: any;
   title: string;
