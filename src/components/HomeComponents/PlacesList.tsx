@@ -7,16 +7,16 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {PlacesData} from '../../data/Index';
+import {TopPlacesData} from '../../data/Index';
 import {FlatList} from 'react-native-gesture-handler';
 import {colors, fontSize, spacing} from '../../constants/theme';
 
 interface PlacesListProps {
-  list: PlacesData[];
+  list: TopPlacesData[];
 }
 
 const PlacesList: React.FC<PlacesListProps> = ({list}) => {
-  const renderItem: ListRenderItem<PlacesData> = ({item}) => (
+  const renderItem: ListRenderItem<TopPlacesData> = ({item}) => (
     <TouchableOpacity style={styles.container}>
       <View>
         <Image source={item.image} style={styles.image} />

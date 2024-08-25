@@ -1,11 +1,12 @@
 import {
-  FlatList,
   Text,
   View,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
+  FlatList,
   Pressable,
+  StyleSheet,
+  ListRenderItem,
+  ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {CarousalItem} from '../../data/Index';
@@ -16,40 +17,48 @@ interface CarousalProps {
 }
 
 const RedSanCarousal: React.FC<CarousalProps> = ({list}) => {
+  const renderItem: ListRenderItem<CarousalItem> = ({item}) => {
+    return (
+      <TouchableOpacity
+        style={{
+          marginLeft: 0,
+          marginRight: 0,
+          marginBottom: spacing.md,
+        }}>
+        <View style={styles.card}>
+          <ImageBackground
+            source={item.image}
+            style={styles.image}
+            resizeMode="cover">
+            <View style={styles.carousal}>
+              <Text style={styles.heading}>{item.title}</Text>
+              <Text style={styles.subHeading}>{item.subTitle}</Text>
+              <Pressable
+                style={styles.carousalButton}
+                onPress={() => {
+                  console.log('Press');
+                }}>
+                <Text style={styles.pressText}>Shop Now</Text>
+              </Pressable>
+              <Text style={styles.offer}>Get Offers Upto</Text>
+              <Text style={styles.offerAmount}>Rs-/499</Text>
+            </View>
+          </ImageBackground>
+        </View>
+      </TouchableOpacity>
+    );
+  };
   return (
     <FlatList
       horizontal
       data={list}
+      pagingEnabled={true}
+      renderItem={renderItem}
       decelerationRate="fast"
-      showsHorizontalScrollIndicator={false}
+      snapToAlignment="center"
+      snapToInterval={sizes.width}
       keyExtractor={i => i.id.toString()}
-      renderItem={({item, index}) => {
-        return (
-          <TouchableOpacity
-            style={{
-              marginLeft: 0,
-              marginRight: 0,
-              marginBottom: spacing.md,
-            }}>
-            <View style={styles.card}>
-              <Image source={item.image} style={styles.image} />
-              <View style={styles.carousal}>
-                <Text style={styles.heading}>{item.title}</Text>
-                <Text style={styles.subHeading}>{item.subTitle}</Text>
-                <Pressable
-                  style={styles.carousalButton}
-                  onPress={() => {
-                    console.log('Press');
-                  }}>
-                  <Text style={styles.pressText}>Shop Now</Text>
-                </Pressable>
-                <Text style={styles.offer}>Get Offers Upto</Text>
-                <Text style={styles.offerAmount}>Rs-/499</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        );
-      }}
+      showsHorizontalScrollIndicator={false}
     />
   );
 };
@@ -59,9 +68,11 @@ const styles = StyleSheet.create({
     minWidth: sizes.width,
     overflow: 'hidden',
     display: 'flex',
+    height: 250,
   },
   image: {
-    resizeMode: 'cover',
+    flex: 1,
+    justifyContent: 'center',
   },
   carousal: {
     display: 'flex',

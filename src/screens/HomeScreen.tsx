@@ -1,15 +1,15 @@
 import React from 'react';
-import ShopList from '../components/HomeComponents/ShopList';
 import {colors, sizes} from '../constants/theme';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import ShopList from '../components/HomeComponents/ShopList';
 import PlacesList from '../components/HomeComponents/PlacesList';
 import CategoryList from '../components/HomeComponents/CategoryList';
 import RedSanHeader from '../components/HomeComponents/RedSanHeader';
+import {PLACES, TOP_PLACES, RedSanCarousalData} from '../data/Index';
 import SectionHeader from '../components/HomeComponents/SectionHeader';
 import RedSanCarousal from '../components/HomeComponents/RedSanCarousal';
-import {View, StyleSheet, ScrollView} from 'react-native';
 import WheelComponent from '../components/HomeComponents/WheelComponent';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {PLACES, TOP_PLACES, RedSanCarousalData} from '../data/Index';
 
 const HomeScreen = () => {
   return (
