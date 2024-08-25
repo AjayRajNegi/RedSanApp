@@ -1,11 +1,11 @@
 import {
-  FlatList,
-  Image,
-  View,
-  StyleSheet,
-  TouchableOpacity,
   Text,
+  View,
+  Image,
+  FlatList,
+  StyleSheet,
   ListRenderItem,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {TopPlacesData} from '../../data/Index';

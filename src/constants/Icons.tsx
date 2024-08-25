@@ -11,6 +11,8 @@ const Icons: Record<string, ImageSourcePropType> = {
   LocationDownArrow: require('../../assets/icons/LocationDownArrow.png'),
   SearchInput: require('../../assets/icons/SearchInput.png'),
   Filter: require('../../assets/icons/Filter.png'),
+  Star: require('../../assets/icons/star.png'),
+  SmollHeart: require('../../assets/icons/smollHeart.png'),
 };
 
 export default Icons;
