@@ -6,7 +6,7 @@ import {
   StyleSheet,
   ListRenderItem,
   ImageBackground,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import React from 'react';
 import {colors, fontSize, sizes, spacing} from '../../constants/theme';
@@ -45,17 +45,19 @@ const PopularSection: React.FC<PopularSectionProps> = ({list}) => {
     );
   };
   return (
-    <TouchableHighlight style={styles.touchableContainer} onPress={() => {}}>
-      <FlatList
-        horizontal
-        data={list}
-        renderItem={renderItem}
-        decelerationRate="fast"
-        snapToAlignment="center"
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item.id.toString()}
-      />
-    </TouchableHighlight>
+    <View style={styles.touchableContainer}>
+      <TouchableWithoutFeedback onPress={() => {}}>
+        <FlatList
+          horizontal
+          data={list}
+          renderItem={renderItem}
+          decelerationRate="fast"
+          snapToAlignment="center"
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => item.id.toString()}
+        />
+      </TouchableWithoutFeedback>
+    </View>
   );
 };
 

@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+import Icons from '../../constants/Icons';
 import {TopPlacesData} from '../../data/Index';
 import {FlatList} from 'react-native-gesture-handler';
 import {colors, fontSize, spacing} from '../../constants/theme';
-import Icons from '../../constants/Icons';
 
 interface PlacesListProps {
   list: TopPlacesData[];
@@ -51,6 +51,7 @@ export default PlacesList;
 const styles = StyleSheet.create({
   flatContainer: {
     marginLeft: spacing.md,
+    marginTop: spacing.md,
   },
   container: {
     marginRight: spacing.md,

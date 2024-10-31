@@ -1,10 +1,10 @@
 import React from 'react';
 import Icon from '../components/HomeComponents/Icon';
 import {iconSize} from '../constants/theme';
-import GameScreen from '../screens/GameScreen';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import DiscoverScreen from '../screens/DiscoverScreen';
+import GameScreen from '../screens/App/Game/GameScreen';
+import HomeScreen from '../screens/App/Home/HomeScreen';
+import ProfileScreen from '../screens/App/Profile/ProfileScreen';
+import DiscoverScreen from '../screens/App/Discover/DiscoverScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 type Tabs = {
