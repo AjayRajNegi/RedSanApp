@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879666931529",
+    "project_id": "redsant1",
+    "storage_bucket": "redsant1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879666931529:android:b68f525c5acb95ebd81c98",
+        "android_client_info": {
+          "package_name": "com.redsan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTNob_klC-KKCQwE7MZq6t4KBw24PdPLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
