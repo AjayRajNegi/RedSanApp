@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import firestore, {
@@ -46,11 +47,25 @@ const LoginScreen = ({navigation}: any) => {
       ) : (
         <Text style={styles.text}>Loading...</Text>
       )}
+=======
+import {View, Text, Button} from 'react-native';
+import React from 'react';
+
+const LoginScreen = ({navigation}: any) => {
+  return (
+    <View>
+      <Text>LoginScreen</Text>
+      <Button
+        title="Move to signup screen"
+        onPress={() => navigation.navigate('SignUp')}
+      />
+>>>>>>> 3e9cfdc2814947a855c65f58deac5841b875d7de
     </View>
   );
 };
 
 export default LoginScreen;
+<<<<<<< HEAD
 
 const styles = StyleSheet.create({
   text: {color: 'black'},
@@ -62,3 +77,5 @@ const styles = StyleSheet.create({
 //     <Text></Text>
 //   </View>
 // );
+=======
+>>>>>>> 3e9cfdc2814947a855c65f58deac5841b875d7de
