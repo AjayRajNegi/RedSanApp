@@ -1,27 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StatusBar} from 'react-native';
-<<<<<<< HEAD
 import TabNavigator from './TabNavigator';
 import StackNavigator from './StackNavigator';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-=======
-import StackNavigator from './StackNavigator';
->>>>>>> 3e9cfdc2814947a855c65f58deac5841b875d7de
+import auth from '@react-native-firebase/auth';
 
 const Stack = createStackNavigator();
 
 const MainNavigators = () => {
-<<<<<<< HEAD
-  const isLoggedIn = false;
-=======
-  const isLoggedIn = true;
->>>>>>> 3e9cfdc2814947a855c65f58deac5841b875d7de
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
+  auth().onAuthStateChanged(user => {
+    if (user !== null) {
+      setIsLoggedIn(true);
+      console.log(user);
+    }
+  });
   return (
     <NavigationContainer>
       <StatusBar hidden />
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {isLoggedIn ? (
+        {isLoggedIn && isVerified ? (
           <Stack.Screen name="App" component={TabNavigator} />
         ) : (
           <Stack.Screen name="Auth" component={StackNavigator} />
@@ -32,11 +32,3 @@ const MainNavigators = () => {
 };
 
 export default MainNavigators;
-
-{
-  /* <Stack.Screen
-          name="Root"
-          component={TabNavigator}
-          options={{headerShown: false}}
-        /> */
-}
