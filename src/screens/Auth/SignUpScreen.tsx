@@ -11,7 +11,7 @@ const SignUpScreen = () => {
 <<<<<<< HEAD
       <Text style={styles.text}>SignUpScreen</Text>
 =======
-      <Text>SignUpScreen</Text>
+      <Text>SignUpScreenText</Text>
 >>>>>>> 3e9cfdc2814947a855c65f58deac5841b875d7de
     </View>
   );
