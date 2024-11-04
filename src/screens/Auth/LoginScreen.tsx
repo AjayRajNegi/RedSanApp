@@ -58,10 +58,3 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   text: {color: 'white', backgroundColor: 'black'},
 });
-
-// return (
-//   <View>
-//
-//     <Text></Text>
-//   </View>
-// );
