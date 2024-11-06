@@ -1,14 +1,14 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import {TextInput} from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
+import {TextInput} from 'react-native-gesture-handler';
 import firestore from '@react-native-firebase/firestore';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const SignUpScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [number, setNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
 
   const handleSignUp = async () => {
     try {
@@ -17,7 +17,7 @@ const SignUpScreen = ({navigation}: any) => {
         password,
       );
 
-      await firestore().collection('users').doc(number).set({email: email});
+      await firestore().collection('users').doc(email).set({username: email});
       console.log(createdUser);
       setError('');
     } catch (err: any) {
@@ -29,10 +29,10 @@ const SignUpScreen = ({navigation}: any) => {
       <Text style={styles.text}>SignUpScreen</Text>
       <View>
         <TextInput
-          value={number}
-          placeholder="Number"
+          value={username}
+          placeholder="UserName"
           style={styles.text}
-          onChangeText={text => setNumber(text)}
+          onChangeText={text => setUsername(text)}
         />
         <TextInput
           value={email}

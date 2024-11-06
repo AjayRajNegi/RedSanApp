@@ -13,6 +13,7 @@ const Icons: Record<string, ImageSourcePropType> = {
   Filter: require('../../assets/icons/Filter.png'),
   Star: require('../../assets/icons/star.png'),
   SmollHeart: require('../../assets/icons/smollHeart.png'),
+  RedSanLogin: require('../../assets/Images/RedSanLogin.png'),
 };
 
 export default Icons;
