@@ -19,8 +19,6 @@ const MainNavigators = () => {
         .collection('users')
         .doc(docId)
         .get();
-      console.log(docSnapshot, 'This is docSnapshot.');
-      console.log(docSnapshot.exists);
 
       if (docSnapshot.exists) {
         const isNumberVerified = docSnapshot.get('isNumberVerified') as
@@ -42,7 +40,7 @@ const MainNavigators = () => {
     if (userEmail) {
       isVerifiedHandler(userEmail);
     } else {
-      console.log('auth().currentUser?.email Error.');
+      console.log('Current User doesnt exist.');
     }
   }, [auth().currentUser]);
 
