@@ -1,10 +1,10 @@
 import {
-  View,
   Text,
-  StyleSheet,
-  TouchableOpacity,
+  View,
   Image,
+  StyleSheet,
   ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import Icons from '../../constants/Icons';
@@ -27,7 +27,10 @@ const SignUpScreen = ({navigation}: any) => {
         password,
       );
 
-      await firestore().collection('users').doc(email).set({username: email});
+      await firestore()
+        .collection('users')
+        .doc(email)
+        .set({username: username, email: email});
       console.log(createdUser);
       setError('');
     } catch (err: any) {
@@ -59,7 +62,7 @@ const SignUpScreen = ({navigation}: any) => {
           <View style={styles.formContainer}>
             <View style={styles.inputContainer}>
               <TextInput
-                value={email}
+                value={username}
                 placeholder="Username"
                 style={styles.inputs}
                 placeholderTextColor="black"

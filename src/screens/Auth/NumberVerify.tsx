@@ -1,9 +1,9 @@
 import {
-  TextInput,
   View,
   Text,
-  StyleSheet,
   Image,
+  TextInput,
+  StyleSheet,
   ImageBackground,
 } from 'react-native';
 import Icons from '../../constants/Icons';

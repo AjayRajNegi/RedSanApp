@@ -12,7 +12,6 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import Icon from '../../components/HomeComponents/Icon';
 
 const LoginScreen = ({navigation}: any) => {
   const [error, setError] = useState('');

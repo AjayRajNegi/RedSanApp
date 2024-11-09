@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
 import {StatusBar} from 'react-native';
 import TabNavigator from './TabNavigator';
 import StackNavigator from './StackNavigator';
+import auth from '@react-native-firebase/auth';
+import React, {useEffect, useState} from 'react';
+import firestore from '@react-native-firebase/firestore';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 
 const Stack = createStackNavigator();
 

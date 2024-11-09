@@ -1,18 +1,19 @@
 import React from 'react';
-import Icon from '../components/HomeComponents/Icon';
 import {iconSize} from '../constants/theme';
+import Icon from '../components/HomeComponents/Icon';
 import GameScreen from '../screens/App/Game/GameScreen';
 import HomeScreen from '../screens/App/Home/HomeScreen';
 import ProfileScreen from '../screens/App/Profile/ProfileScreen';
 import DiscoverScreen from '../screens/App/Discover/DiscoverScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeStackNavigator from './HomeStack/HomeStackNavigator';
 
 type Tabs = {
   name: string;
   screen: React.ComponentType<any>;
 };
 const tabs: Tabs[] = [
-  {name: 'Home', screen: HomeScreen},
+  {name: 'Home', screen: HomeStackNavigator},
   {name: 'Search', screen: DiscoverScreen},
   {name: 'Favorite', screen: GameScreen},
   {name: 'User', screen: ProfileScreen},

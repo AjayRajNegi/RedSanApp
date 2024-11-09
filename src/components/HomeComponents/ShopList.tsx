@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import {TopPlacesData} from '../../data/Index';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 import {colors, fontSize, sizes, spacing} from '../../constants/theme';
 
 const CARD_WIDTH = sizes.width / 2.8 - (spacing.lg + spacing.lg / 2);
@@ -20,9 +21,19 @@ interface TripProps {
 }
 
 const ShopList: React.FC<TripProps> = ({list}) => {
+  const navigation =
+    useNavigation<NavigationProp<{BusinessScreen: {item: TopPlacesData}}>>();
+
+  const businessProfileHandler = (item: TopPlacesData) => {
+    navigation.navigate('BusinessScreen', {item});
+  };
   const renderItem: ListRenderItem<TopPlacesData> = ({item}) => {
     return (
-      <TouchableOpacity style={styles.touchContainer}>
+      <TouchableOpacity
+        style={styles.touchContainer}
+        onPress={() => {
+          businessProfileHandler(item);
+        }}>
         <View style={[styles.card]}>
           <View style={styles.streak}>
             <View
