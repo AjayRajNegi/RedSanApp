@@ -33,6 +33,7 @@ const SignUpScreen = ({navigation}: any) => {
         .set({username: username, email: email});
       console.log(createdUser);
       setError('');
+      navigation.navigate('NoVerify');
     } catch (err: any) {
       setError(err.message);
     }
@@ -100,10 +101,6 @@ const SignUpScreen = ({navigation}: any) => {
                 </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                   <Text style={{color: '#FF0000'}}>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('NoVerify')}>
-                  <Text style={{color: '#FF0000'}}>Number Verify</Text>
                 </TouchableOpacity>
               </View>
             </View>

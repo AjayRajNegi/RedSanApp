@@ -7,6 +7,10 @@ import ProfileScreen from '../screens/App/Profile/ProfileScreen';
 import DiscoverScreen from '../screens/App/Discover/DiscoverScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeStackNavigator from './HomeStack/HomeStackNavigator';
+import {
+  getFocusedRouteNameFromRoute,
+  RouteProp,
+} from '@react-navigation/native';
 
 type Tabs = {
   name: string;
@@ -26,7 +30,10 @@ const TabNavigator = () => {
     <>
       <Tab.Navigator
         initialRouteName="Home"
-        screenOptions={{headerShown: false}}>
+        screenOptions={({route}) => ({
+          tabBarStyle: {display: getTabBarVisibility(route) ? 'flex' : 'none'},
+          headerShown: false,
+        })}>
         {tabs.map(({name, screen}, index) => {
           return (
             <Tab.Screen
@@ -56,3 +63,9 @@ const TabNavigator = () => {
 };
 
 export default TabNavigator;
+
+const getTabBarVisibility = (route: any) => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? '';
+  // Hide tab bar on 'Business' screen
+  return routeName !== 'BusinessScreen';
+};

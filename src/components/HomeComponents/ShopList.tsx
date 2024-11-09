@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   card: {
     width: CARD_WIDTH,
     height: CARD_HEIGHT,
-    backgroundColor: colors.white,
+    backgroundColor: colors.light,
     borderRadius: sizes.radius,
   },
   streak: {

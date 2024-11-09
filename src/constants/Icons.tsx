@@ -1,5 +1,6 @@
 import {ImageSourcePropType} from 'react-native';
 const Icons: Record<string, ImageSourcePropType> = {
+  BackArrow: require('../../assets/icons/backArrow.png'),
   Home: require('../../assets/icons/Home.png'),
   Search: require('../../assets/icons/Search.png'),
   Favorite: require('../../assets/icons/Favorite.png'),

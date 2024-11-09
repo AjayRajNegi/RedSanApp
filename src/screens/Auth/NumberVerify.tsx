@@ -14,7 +14,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
-function NumberVerify() {
+function NumberVerify({navigation}: any) {
   const [code, setCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [initializing, setInitializing] = useState(true);
@@ -22,16 +22,15 @@ function NumberVerify() {
   const [confirm, setConfirm] =
     useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
 
+  // const navigation = useNavigation();
+
   function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
     setUser(user);
     if (initializing) setInitializing(false);
-    // console.log('onAuthStateChanges is working.');
-    // console.log('user', user);
   }
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    // console.log(subscriber);
     return subscriber; // unsubscribe on unmount
   }, []);
 
@@ -39,9 +38,6 @@ function NumberVerify() {
     try {
       const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
       setConfirm(confirmation);
-      // console.log('confirmation', confirmation);
-      // console.log('confirm', confirm);
-      // console.log('Verify phone no. is working.');
     } catch (error) {
       console.error('Phone verification error:', error);
     }
@@ -58,9 +54,6 @@ function NumberVerify() {
           credential,
         );
         setUser(userData?.user || null);
-        // console.log('Credential', credential);
-        // console.log('userData', userData);
-        // console.log(user, 'user');
         updateDetails();
       }
     } catch (error: any) {
@@ -82,6 +75,7 @@ function NumberVerify() {
           isNumberVerified: true,
         })
         .then(() => {
+          navigation.navigate('Home');
           console.log('Details updated successfully.');
         });
     } else {

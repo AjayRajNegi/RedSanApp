@@ -26,6 +26,8 @@ const StackNavigator = () => {
         <>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />
+          <Stack.Screen name="NoVerify" component={NumberVerify} />
+          <Stack.Screen name="Home" component={HomeStackNavigator} />
         </>
       ) : (
         <>

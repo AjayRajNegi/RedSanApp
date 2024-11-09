@@ -52,7 +52,7 @@ const MainNavigators = () => {
   });
   return (
     <NavigationContainer>
-      <StatusBar />
+      <StatusBar backgroundColor={'#D5D5D5'} barStyle={'dark-content'} />
       <Stack.Navigator screenOptions={{headerShown: false}}>
         {isLoggedIn && isVerified ? (
           <Stack.Screen name="App" component={TabNavigator} />

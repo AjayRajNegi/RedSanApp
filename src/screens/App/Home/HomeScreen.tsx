@@ -1,8 +1,8 @@
 import React from 'react';
 import {colors, sizes} from '../../../constants/theme';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import ShopList from '../../../components/HomeComponents/ShopList';
-import {View, StyleSheet, ScrollView, Platform} from 'react-native';
 import PlacesList from '../../../components/HomeComponents/PlacesList';
 import CategoryList from '../../../components/HomeComponents/CategoryList';
 import RedSanHeader from '../../../components/HomeComponents/RedSanHeader';
@@ -40,7 +40,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   container: {
