@@ -66,7 +66,7 @@ export const PLACES: PlacesData[] = [
     title: 'Cappadocia',
     location: 'Turkey',
     description:
-      "Cappadocia's landscape includes dramatic expanses of soft volcanic rock, shaped by erosion into towers, cones, valleys, and caves. Rock-cut churches and underground tunnel complexes from the Byzantine and Islamic eras are scattered throughout the countryside.",
+      "Cappadocia's landscape includes dramatic expanses of soft volcanic rock, shaped by erosion into towers, cones, valleys, and caves.  ",
     streakNumber: 6,
     streakColor: 'orange',
   },
